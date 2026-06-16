@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { useEffect } from "react";
 import Label from "./Label";
+import type { User } from "../data";
 
 const userSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -22,9 +23,9 @@ const userSchema = z.object({
 type UserFormData = z.infer<typeof userSchema>;
 
 export function UserForm() {
-  const user = useLoaderData() as any; // null when creating
+  const user = useLoaderData<User | null>(); // null when creating
   const navigate = useNavigate();
-  const actionData = useActionData() as any;
+  const actionData = useActionData<{ success?: boolean }>();
   const navigation = useNavigation(); // helps show loading state
 
   const {

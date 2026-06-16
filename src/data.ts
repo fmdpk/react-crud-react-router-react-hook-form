@@ -33,7 +33,7 @@ let users: User[] = [
   },
 ];
 
-export const getUsers = () => users;
+export const getUsers = (): User[] => users;
 
 export const getUser = (id: string) => users.find((u) => u.id === id);
 

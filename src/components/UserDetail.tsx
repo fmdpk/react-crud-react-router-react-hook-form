@@ -2,9 +2,10 @@
 // src/components/UserDetail.tsx
 // =============================================
 import { useLoaderData, Link } from "react-router-dom";
+import type { User } from "../data";
 
 export function UserDetail() {
-  const user = useLoaderData() as any;
+  const user = useLoaderData<User | null>();
 
   if (!user) {
     return <div>User not found</div>;

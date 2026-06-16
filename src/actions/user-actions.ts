@@ -5,7 +5,6 @@ import { createUser, deleteUser, updateUser } from "../data";
 export async function deleteUserAction({ params }: ActionFunctionArgs) {
   deleteUser(params.id);
   return redirect("/");
-  // return null; // will trigger revalidation
 }
 
 export async function createUserAction({ request }: ActionFunctionArgs) {
