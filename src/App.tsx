@@ -25,6 +25,12 @@ function App() {
               >
                 New User
               </Link>
+              <Link
+                to="/form"
+                className={`hover:text-blue-600 ${location.pathname === "/form" ? "text-blue-600 font-medium" : "text-gray-600"}`}
+              >
+                Form
+              </Link>
             </div>
           </div>
         </div>

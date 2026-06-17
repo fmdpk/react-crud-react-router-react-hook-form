@@ -56,6 +56,13 @@ const router = createBrowserRouter([
             (await import("./actions/user-actions.ts")).deleteUserAction,
         },
       },
+      {
+        path: "form",
+        lazy: {
+          Component: async () =>
+            (await import("./components/ReactHookForm.tsx")).ReactHookForm,
+        },
+      },
     ],
   },
 ]);
